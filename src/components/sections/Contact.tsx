@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Mail, Phone, Globe, Send, CheckCircle2, Loader2, Copy, Check } from "lucide-react";
 import { sendEmailAction } from "@/actions/sendEmail";
 import CalButton from "@/components/ui/CalButton";
-import CustomSelect from "@/components/ui/CustomSelect";
 import { projectOptions } from "@/content/project.options";
 
 export default function Contact() {
@@ -150,12 +149,20 @@ export default function Contact() {
 
                                 <div>
                                     <label htmlFor="contact-type" className="label-base">Rodzaj projektu</label>
-                                    <CustomSelect
-                                        name="projectType"
+                                    <select
                                         id="contact-type"
-                                        options={projectOptions}
-                                        required={true}
-                                    />
+                                        name="projectType"
+                                        required
+                                        className="input-base appearance-none cursor-pointer"
+                                        defaultValue=""
+                                    >
+                                        <option value="" disabled className="text-slate-400">Wybierz...</option>
+                                        {projectOptions.map((opt) => (
+                                            <option key={opt.value} value={opt.value}>
+                                                {opt.label}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
 
                                 <div>

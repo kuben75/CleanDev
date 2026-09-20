@@ -3,8 +3,7 @@ import { seoCities } from '@/content/seo-cities';
 import { projects } from '@/content/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-
-    const baseUrl = 'https://twojadomena.pl'; //TODO: Replace with your actual base URL
+    const baseUrl = 'https://www.automatyzuj.it';
 
     const cityUrls = seoCities.map((city) => ({
         url: `${baseUrl}/tworzenie-stron/${city.slug}`,
@@ -12,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.8,
     }));
-
 
     const projectUrls = projects.map((project) => ({
         url: `${baseUrl}/realizacje/${project.id}`,

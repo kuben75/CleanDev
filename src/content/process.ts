@@ -9,7 +9,7 @@ export const steps: IStep[] = [
     {
         step: "02",
         title: "Strategia, wycena i umowa",
-        description: "Na podstawie naszych ustaleń przygotowuję jasną propozycję i wycenę. Większe projekty dzielimy na etapy. Rozliczamy się bezpiecznie i legalnie na podstawie umowy przez platformę Useme, która wygeneruje dla Ciebie polską fakturę VAT za każdy zrealizowany etap.",
+        description: "Na podstawie naszych ustaleń przygotowuję jasną propozycję i wycenę. Proces formalny sprowadzam do minimum – nie musisz nigdzie zakładać kont. Ja przygotowuję i przesyłam umowę, a Ty otrzymujesz bezpieczny link do opłacenia projektu (zaliczką lub w całości). Otrzymujesz na to polską fakturę VAT.",
     },
     {
         step: "03",
@@ -29,7 +29,7 @@ export const steps: IStep[] = [
     {
         step: "06",
         title: "Wdrożenie na produkcję",
-        description: "Po finalnej akceptacji konfiguruję Twoją domenę, ustawiam środowisko hostingowe i wdrażam projekt. Twoja aplikacja staje się widoczna dla świata, w pełni bezpieczna i gotowa na przyjęcie klientów.",
+        description: "Po finalnej akceptacji konfiguruję Twoją domenę, ustawiam środowisko hostingowe i wdrażam projekt. Przekazuję Ci pełne autorskie prawa majątkowe do kodu, a Twoja aplikacja staje się bezpieczna i gotowa na przyjęcie klientów.",
     },
     {
         step: "07",

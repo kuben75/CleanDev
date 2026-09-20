@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowRight, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { sendEmailAction } from "@/actions/sendEmail";
 import { proof } from "@/content/proof";
-import CustomSelect from "@/components/ui/CustomSelect";
 import { projectOptions } from "@/content/project.options";
 
 export default function Hero() {
@@ -13,7 +12,7 @@ export default function Hero() {
     const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
     const [errorMessage, setErrorMessage] = useState("");
 
-    async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleFormSubmit(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
         const form = e.currentTarget;
         setIsPending(true);
@@ -91,17 +90,25 @@ export default function Hero() {
 
                                     <div>
                                         <label htmlFor="hero-email" className="label-base">E-mail</label>
-                                        <input id="hero-email" type="email" name="email" required autoComplete="email" placeholder="biuro@firma.pl" className="input-base" />
+                                        <input id="hero-email" type="email" name="email" required autoComplete="email" className="input-base" />
                                     </div>
 
                                     <div>
                                         <label htmlFor="hero-type" className="label-base">Rodzaj projektu</label>
-                                        <CustomSelect
-                                            name="projectType"
+                                        <select
                                             id="hero-type"
-                                            options={projectOptions}
-                                            required={true}
-                                        />
+                                            name="projectType"
+                                            required
+                                            className="input-base cursor-pointer"
+                                            defaultValue=""
+                                        >
+                                            <option value="" disabled className="text-slate-400">Wybierz...</option>
+                                            {projectOptions.map((opt) => (
+                                                <option key={opt.value} value={opt.value}>
+                                                    {opt.label}
+                                                </option>
+                                            ))}
+                                        </select>
                                     </div>
 
                                     <div className="flex items-start gap-3 pt-2">

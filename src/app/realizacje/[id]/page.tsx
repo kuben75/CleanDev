@@ -4,10 +4,28 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, GitBranch } from "lucide-react";
 import ProjectGallery from "@/components/ui/ProjectGallery";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } = await params;
+    const project = projects.find((p) => p.id === id);
+
+    if (!project) return { title: "Projekt nieznaleziony" };
+
+    return {
+        title: `${project.title} - ${project.subtitle}`,
+        description: project.description,
+    };
+}
+
+export async function generateStaticParams() {
+    return projects.map((project) => ({
+        id: project.id,
+    }));
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-
     const project = projects.find((p) => p.id === id);
 
     if (!project) {
@@ -22,16 +40,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             <section className="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                    <Link href="/#realizacje" className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors mb-12 group uppercase tracking-widest">
-                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    <Link className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors mb-12 group uppercase tracking-widest" href="/#realizacje">
+                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform"/>
                         Powrót do strony głównej
                     </Link>
 
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
                         <div>
-                            <div className="flex items-center gap-4 mb-6">
+                            <div className="flex flex-wrap items-center gap-4 mb-6">
                                 <span className="font-mono text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                                     {project.subtitle}
+                                </span>
+                                <span className={`inline-flex px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-sm border ${statusStyle.color}`}>
+                                    {project.status}
                                 </span>
                             </div>
                             <h1 className="heading-1">
@@ -42,12 +63,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                         <div className="flex flex-col sm:flex-row gap-4">
                             {project.liveUrl && (
                                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                                    Zobacz na żywo <ExternalLink className="w-4 h-4" />
+                                    Zobacz na żywo <ExternalLink className="w-4 h-4"/>
                                 </a>
                             )}
                             {project.githubUrl && (
                                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-outline">
-                                    Kod źródłowy <GitBranch className="w-4 h-4" />
+                                    Kod źródłowy <GitBranch className="w-4 h-4"/>
                                 </a>
                             )}
                         </div>
@@ -196,7 +217,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     {project.customCta ? project.customCta.description : "Zaprojektuję i wdrożę system dopasowany do specyfiki Twojego biznesu."}
                 </p>
                 <div className="flex justify-center">
-                    <Link href="/#kontakt" className="btn-primary">
+                    <Link className="btn-primary" href="/#kontakt">
                         Porozmawiajmy o projekcie
                     </Link>
                 </div>

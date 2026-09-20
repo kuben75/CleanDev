@@ -24,30 +24,32 @@ export async function sendEmailAction(formData: FormData) {
         rateLimit.set(ip, { count: 1, time: now });
     }
 
+    const website = formData.get("website") as string;
+
+
+    if (website && website.length > 0) {
+        return { success: true };
+    }
+
     const data = {
         name: formData.get("name"),
         email: formData.get("email"),
         subject: formData.get("subject"),
         message: formData.get("message"),
         projectType: formData.get("projectType"),
-        website: formData.get("website") || "",
     };
 
     const parsed = formSchema.safeParse(data);
 
     if (!parsed.success) {
-        return { error: parsed.error.message};
+        return { error: parsed.error.issues[0]?.message || "Błąd walidacji danych." };
     }
 
-    const { name, email, subject, message, projectType, website } = parsed.data;
-
-    if (website) {
-        return { success: true };
-    }
+    const { name, email, subject, message, projectType } = parsed.data;
 
     try {
         await resend.emails.send({
-            from: "Formularz Portfolio <automatyzuj.it@gmail.com", //TODO: Zmień na własny adres e-mail
+            from: "Formularz Automatyzuj.it <onboarding@resend.dev>",
             to: "automatyzuj.it@gmail.com",
             replyTo: email,
             subject: `Nowe zapytanie: ${subject} (${projectType})`,

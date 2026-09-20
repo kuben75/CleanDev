@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
                     <div>
                         <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">1. Administrator Danych Osobowych</h2>
                         <p>
-                            Administratorem Twoich danych osobowych przekazywanych za pośrednictwem strony internetowej jest <strong>Automatyzuj.it</strong> (niezależny inżynier oprogramowania pracujący zdalnie).
+                            Administratorem Twoich danych osobowych przekazywanych za pośrednictwem strony internetowej jest <strong>Jakub Ławniczak (Niezależny Inżynier Oprogramowania)</strong>, działający pod marką <strong>Automatyzuj.it</strong>.
                             W sprawach związanych z przetwarzaniem danych możesz kontaktować się pod adresem e-mail: <strong>automatyzuj.it@gmail.com</strong>.
                         </p>
                     </div>

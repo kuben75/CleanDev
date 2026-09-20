@@ -4,10 +4,10 @@ import { ArrowRight, Grid3X3 } from "lucide-react";
 import { projects } from "@/content/projects";
 import { getStatusBadges } from "@/content/Badges";
 
-const order = ["mindcare", "hatsumi", "medisure", "cleandaw"];
+const order = ["mindcare", "cleandaw", "hatsumi", "medisure"];
 const ordered = [...projects].sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 
-const featuredProjects = ordered.slice(0, 4);
+const featuredProjects = ordered.slice(0, 3);
 
 export default function Portfolio() {
     return (
@@ -83,7 +83,7 @@ export default function Portfolio() {
                     <Link href="/realizacje" className="btn-primary group flex items-center gap-2">
                         <Grid3X3 className="w-5 h-5" />
                         Zobacz pełne portfolio
-                        <span className="text-xs ml-2 opacity-80 font-normal">({projects.length} projektów)</span>
+                        <span className="text-xs ml-2 opacity-80 font-normal">({projects.length} projekty)</span>
                     </Link>
                 </div>
             </div>

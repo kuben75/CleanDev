@@ -1,11 +1,9 @@
-
 export const siteConfig = {
     name: "Automatyzuj.it | Tworzenie oprogramowania i stron B2B",
     shortName: "Automatyzuj.it",
     description: "Projektuję i wdrażam strony internetowe, sklepy i systemy SaaS dla firm. Zautomatyzuj swój biznes i zdobądź więcej klientów.",
-    //TODO: Add domain here, and change the ogImage
     url: "https://www.automatyzuj.it",
-    ogImage: "https://automatyzuj.it/og.png",
+    ogImage: "https://www.automatyzuj.it/og.png",
     links: {
         github: "https://github.com/kuben75",
         linkedin: "https://linkedin.com/in/jlawniczak1",

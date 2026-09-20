@@ -31,8 +31,8 @@ export const projects: IProject[] = [
                 description: "System tworzy spójną kartotekę pacjenta, grupując wszystkie jego rezerwacje. W module finansowym na bieżąco generowane są wykresy przychodów z możliwością eksportu danych dla księgowości."
             },
             {
-                title: "Ochrona biznesu (Audit Log i 2FA)",
-                description: "Każda akcja w systemie jest zapisywana w dzienniku zdarzeń. Administrator widzi wszystkie próby logowania, a dodatkowa weryfikacja dwuetapowa (kody z aplikacji na telefonie) chroni prywatne notatki z wywiadów medycznych przed wyciekiem."
+                title: "Bezpieczeństwo i Audit Log",
+                description: "Każda kluczowa akcja w systemie jest zapisywana w dzienniku zdarzeń. Administrator widzi próby logowania, a dodatkowa weryfikacja dwuetapowa chroni prywatne notatki z wywiadów medycznych przed wyciekiem."
             },
             {
                 title: "Ergonomia pracy",
@@ -87,7 +87,7 @@ export const projects: IProject[] = [
         title: "CleanDaw",
         subtitle: "Wizytówka Firmowa B2C",
         description: "Szybka strona dla lokalnej firmy detailingowej. Zoptymalizowana pod wytyczne wyszukiwarki Google oraz wysoki wskaźnik konwersji (zamiana odwiedzającego w kontakt telefoniczny).",
-        businessImpact: "Maksymalizacja wyników wydajności (98/100 na mobile), co ułatwia pozycjonowanie na rynku lokalnym.",
+        businessImpact: "Maksymalizacja wydajności (wyniki w ścisłej czołówce – tzw. zielona strefa 90-100 punktów w Google PageSpeed), co ułatwia pozycjonowanie na lokalnym rynku.",
         techStack: ["Next.js", "Tailwind CSS", "React Leaflet", "SEO"],
         imagePath: "/img/cleandaw/2.png",
         reversed: true,
@@ -95,13 +95,13 @@ export const projects: IProject[] = [
         liveUrl: "https://cleandaw.pl",
         story: {
             problem: "Lokalny usługodawca potrzebował strony internetowej, która szybko się ładuje na telefonach komórkowych i od razu zachęca do kontaktu.",
-            solution: "Zaprojektowałem stronę w ciemnej kolorystyce, dostosowaną do branży motoryzacyjnej. Do obsługi map wykorzystałem otwarte biblioteki (Leaflet), aby uniknąć konieczności podpinania płatnych API zewnętrznych dostawców.",
-            result: "Strona osiąga wynik 100/100 w audycie Google Lighthouse. Kod HTML został wzbogacony o ustrukturyzowane dane (JSON-LD), co pomaga algorytmom zrozumieć lokalny zasięg działalności firmy."
+            solution: "Zaprojektowałem stronę w ciemnej kolorystyce, dostosowaną do branży motoryzacyjnej. Do obsługi map wykorzystałem otwarte biblioteki Leaflet, aby uniknąć konieczności podpinania płatnych API zewnętrznych dostawców.",
+            result: "Strona regularnie osiąga maksymalne noty (95-100 punktów) w audytach Google Lighthouse. Kod HTML został wzbogacony o ustrukturyzowane dane (JSON-LD), co pomaga algorytmom zrozumieć lokalny zasięg działalności firmy."
         },
         highlights: [
             {
                 title: "Wydajność Core Web Vitals",
-                description: "Dzięki statycznemu generowaniu (SSG) w Next.js oraz optymalizacji formatów zdjęć (WebP/AVIF), strona ładuje się w niespełna sekundę nawet na słabszych połączeniach 3G."
+                description: "Dzięki statycznemu generowaniu w Next.js oraz optymalizacji formatów zdjęć, strona ładuje się w niespełna sekundę nawet na słabszych połączeniach 3G."
             },
             {
                 title: "Dostępność i nawigacja",
@@ -139,7 +139,7 @@ export const projects: IProject[] = [
         story: {
             problem: "Wybór odpowiedniego ubezpieczenia zdrowotnego często wymaga analizy wielu skomplikowanych ofert i wymiany maili z doradcą. Zależało mi na zbudowaniu jednego, czytelnego procesu obsługi.",
             solution: "Zaprojektowałem platformę, w której użytkownik odpowiada na kilka pytań, a system sam dobiera optymalny pakiet. Cały proces – od wyceny, przez ewentualny czat z doradcą, aż po wygenerowanie certyfikatu – odbywa się płynnie na jednym ekranie.",
-            result: "Powstał stabilny system o skali komercyjnej. Dzięki testom automatycznym, platforma jest przygotowana na duży ruch i dalszą rozbudowę bez ryzyka awarii."
+            result: "Powstał stabilny system przetestowany w warunkach obciążeniowych. Dzięki testom automatycznym, platforma jest przygotowana na dalszą rozbudowę bez ryzyka awarii."
         },
         highlights: [
             {
@@ -207,7 +207,8 @@ export const projects: IProject[] = [
         imagePath: "/img/hatsumi/1.png",
         reversed: true,
         status: "Live",
-        statusMessage: "Sklep obsługuje prawdziwych klientów. Wyposażony w  zabezpieczenia i autorski system logowania zdarzeń chroniący dane kupujących.",
+        liveUrl: "https://hatsumiscissors.pl",
+        statusMessage: "Sklep obsługuje prawdziwych klientów. Wyposażony w rygorystyczne zabezpieczenia i autorski system logowania zdarzeń chroniący dane kupujących.",
         story: {
             problem: "Właściciel marki potrzebował sklepu do sprzedaży asortymentu premium. Gotowe rozwiązania rynkowe były zbyt ociężałe, narzucały ograniczenia wizualne i generowałyby dodatkowe koszty utrzymania zewnętrznych wtyczek.",
             solution: "Zaprojektowałem i wdrożyłem w 100% autorski silnik e-commerce. Zintegrowałem bezpieczne płatności Stripe, system błyskawicznego logowania przez Google oraz rozbudowany kreator kodów rabatowych.",
@@ -227,8 +228,8 @@ export const projects: IProject[] = [
                 description: "Zbudowałem elastyczny moduł kodów rabatowych. Administrator może tworzyć zniżki kwotowe lub procentowe, precyzyjnie przypisując je do całego koszyka, konkretnych kategorii, lub pojedynczych produktów."
             },
             {
-                title: "Bezpieczeństwo klasy Enterprise",
-                description: "Panel administracyjny jest chroniony przed atakami typu Brute Force – po 5 nieudanych próbach system automatycznie blokuje dostęp i wysyła alert bezpieczeństwa na e-mail. Każda akcja w sklepie jest monitorowana."
+                title: "Bezpieczeństwo i blokada Brute-Force",
+                description: "Panel administracyjny jest chroniony przed atakami – po 5 nieudanych próbach system blokuje dostęp i wysyła alert bezpieczeństwa na e-mail administratora. Każda akcja jest skrupulatnie monitorowana."
             }
         ],
         customCta: {

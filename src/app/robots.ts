@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://twojadomena.pl'; //TODO: Replace with your actual base URL
+    const baseUrl = 'https://www.automatyzuj.it';
 
     return {
         rules: {
