@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 80" width="100%" height="100%">
+  <!-- Ikona: Dwa ukośniki symbolizujące kod i przyspieszenie/automatyzację -->
+  <path d="M20 60 L45 15 L60 15 L35 60 Z" fill="#0f172a" />
+  <path d="M45 60 L70 15 L85 15 L60 60 Z" fill="#10b981" />
+  
+  <!-- Tekst: Automatyzuj (slate-900) .it (emerald-500) -->
+  <text x="100" y="50" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#0f172a" letter-spacing="-1.5">
+    Automatyzuj<tspan fill="#10b981">.it</tspan>
+  </text>
+</svg>
