@@ -5,8 +5,7 @@ import Portfolio from "@/components/sections/Portfolio";
 import Contact from "@/components/sections/Contact";
 import FAQ from "@/components/sections/FAQ";
 import About from "@/components/sections/About";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 export default function Home() {
     return (
@@ -18,8 +17,6 @@ export default function Home() {
             <Process/>
             <FAQ/>
             <Contact />
-            <Analytics />
-            <SpeedInsights/>
         </main>
     );
 }

@@ -103,8 +103,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 />
             </section>
 
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 md:mt-24">
+                <div className="text-center">
+                    <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">
+                        Przejście do problemu
+                    </p>
+                    <h3 className="mt-4 text-3xl md:text-5xl font-black leading-tight text-slate-900 dark:text-white tracking-[-0.04em]">
+                        To właśnie tutaj widać realny problem biznesowy, który rozwiązaliśmy — i jak technologia zamienia trudności w przewagę na rynku.
+                    </h3>
+                </div>
+            </section>
+
             <section className="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mt-6">
 
                     <div className="md:col-span-5 md:pr-8 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 pb-12 md:pb-0">
                         <h3 className="heading-2 mb-6">
