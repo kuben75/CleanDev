@@ -91,6 +91,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 </div>
             </section>
 
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                <div className="mb-12 border-b border-slate-200 dark:border-slate-800 pb-8">
+                    <h2 className="heading-2">Zrzuty ekranu</h2>
+                </div>
+
+                <ProjectGallery
+                    desktopGallery={project.desktopGallery}
+                    mobileGallery={project.mobileGallery}
+                    title={project.title}
+                />
+            </section>
+
             <section className="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
 
@@ -196,18 +208,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     </div>
                 </section>
             )}
-
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-                <div className="mb-12 border-b border-slate-200 dark:border-slate-800 pb-8">
-                    <h2 className="heading-2">Zrzuty ekranu</h2>
-                </div>
-
-                <ProjectGallery
-                    desktopGallery={project.desktopGallery}
-                    mobileGallery={project.mobileGallery}
-                    title={project.title}
-                />
-            </section>
 
             <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-32 text-center">
                 <h2 className="heading-2 mb-6">
