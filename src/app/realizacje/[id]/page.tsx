@@ -109,7 +109,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                         Przejście do problemu
                     </p>
                     <h3 className="mt-4 text-3xl md:text-5xl font-black leading-tight text-slate-900 dark:text-white tracking-[-0.04em]">
-                        To właśnie tutaj widać realny problem biznesowy, który rozwiązaliśmy — i jak technologia zamienia trudności w przewagę na rynku.
+                        Technologia ma przede wszystkim zarabiać i oszczędzać czas. Zobacz, przed jakim wyzwaniem stał klient i jak to zautomatyzowałem.
                     </h3>
                 </div>
             </section>
