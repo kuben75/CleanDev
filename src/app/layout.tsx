@@ -8,8 +8,6 @@ import ScrollToTop from "@/components/ui/ScrollToTop";
 import CookieBanner from "@/components/ui/CookieBanner";
 import {siteConfig} from "@/config/site";
 import React from "react";
-import {Analytics} from "@vercel/analytics/vue";
-import {SpeedInsights} from "@vercel/speed-insights/vue";
 
 const inter = Inter({
     subsets: ["latin", "latin-ext"],
@@ -60,8 +58,6 @@ export default function RootLayout({
             <Footer />
             <ScrollToTop />
             <CookieBanner/>
-            <Analytics />
-            <SpeedInsights/>
         </ThemeProvider>
         </body>
         </html>
