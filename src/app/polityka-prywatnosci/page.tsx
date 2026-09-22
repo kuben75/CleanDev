@@ -3,7 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Polityka Prywatności | Automatyzuj.it",
+    // FIX: removed "| Automatyzuj.it" — duplicated by the layout title template
+    title: "Polityka Prywatności",
     description: "Zasady przetwarzania danych osobowych i polityka plików cookies.",
 };
 
@@ -48,6 +49,7 @@ export default function PrivacyPolicy() {
                         <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">3. Odbiorcy danych (Narzędzia zewnętrzne)</h2>
                         <p className="mb-4">W celu zapewnienia najwyższej jakości usług, Twoje dane mogą być powierzane sprawdzonym podmiotom trzecim (procesorom):</p>
                         <ul className="list-disc pl-6 space-y-2 marker:text-slate-400">
+                            <li><strong>Vercel:</strong> dostawca hostingu strony oraz anonimowej analityki ruchu (Vercel Analytics, Speed Insights).</li>
                             <li><strong>Resend:</strong> system do bezpiecznej obsługi wysyłki e-maili z formularza kontaktowego.</li>
                             <li><strong>Cal.com / Google:</strong> narzędzia obsługujące kalendarz rezerwacji oraz generujące wideo-rozmowy.</li>
                             <li><strong>Useme:</strong> w przypadku nawiązania współpracy, dane niezbędne do wystawienia faktury VAT oraz zawarcia umowy o dzieło przekazywane są do platformy rozliczeniowej Useme.</li>

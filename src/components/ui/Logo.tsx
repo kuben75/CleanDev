@@ -8,9 +8,16 @@ export default function Logo({ withText = false, className = "" }: ILogoProps) {
             <Image
                 src="/logo.svg"
                 alt={withText ? "Logo" : "Automatyzuj.it"}
-                width={200}    
+                width={200}
                 height={48}
-                className="h-12 w-auto dark:invert"
+                className="h-12 w-auto block dark:hidden"
+            />
+            <Image
+                src="/logo-dark.svg"
+                alt={withText ? "Logo" : "Automatyzuj.it"}
+                width={200}
+                height={48}
+                className="h-12 w-auto hidden dark:block"
             />
             {withText && (
                 <span className="text-3xl font-bold tracking-tighter text-slate-900 dark:text-white">

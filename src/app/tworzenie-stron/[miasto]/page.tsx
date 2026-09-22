@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ miasto: s
     if (!city) return {};
 
     return {
-        title: `Strony internetowe dla firm ${city.preposition} ${city.locative} | Automatyzuj.it`,
+        title: `Strony internetowe dla firm ${city.preposition} ${city.locative}`,
         description: `Szukasz wykonawcy strony ${city.preposition} ${city.locative}? Buduję szybkie strony dla małych firm usługowych, systemy rezerwacji online i sklepy internetowe.`,
     };
 }

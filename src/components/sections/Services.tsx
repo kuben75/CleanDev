@@ -1,5 +1,3 @@
-"use client";
-
 import { services } from "@/content/Services";
 import { Info } from "lucide-react";
 

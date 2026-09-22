@@ -6,6 +6,7 @@ import { ArrowRight, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { sendEmailAction } from "@/actions/sendEmail";
 import { proof } from "@/content/proof";
 import { projectOptions } from "@/content/project.options";
+import { siteConfig } from "@/config/site";
 
 export default function Hero() {
     const [isPending, setIsPending] = useState(false);
@@ -50,10 +51,19 @@ export default function Hero() {
                             </li>
                         ))}
                     </ul>
-                    <Link href="#realizacje" className="btn-outline group md:!w-auto self-start">
-                        Zobacz, co już zbudowałem
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+
+                    <div className="flex flex-col gap-3 items-start">
+                        <Link href="#realizacje" className="btn-outline group md:!w-auto self-start">
+                            Zobacz, co już zbudowałem
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                        <p className="text-sm text-slate-500 dark:text-slate-500">
+                            Wolisz zadzwonić?{" "}
+                            <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`} className="font-bold text-slate-900 dark:text-white hover:underline">
+                                {siteConfig.contact.phone}
+                            </a>
+                        </p>
+                    </div>
                 </div>
 
                 <div className="flex-1 w-full max-w-lg">

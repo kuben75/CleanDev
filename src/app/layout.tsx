@@ -8,6 +8,8 @@ import ScrollToTop from "@/components/ui/ScrollToTop";
 import CookieBanner from "@/components/ui/CookieBanner";
 import {siteConfig} from "@/config/site";
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
+import {SpeedInsights} from "@vercel/speed-insights/react";
 
 const inter = Inter({
     subsets: ["latin", "latin-ext"],
@@ -28,6 +30,20 @@ export const metadata: Metadata = {
         title: siteConfig.name,
         description: siteConfig.description,
         siteName: siteConfig.name,
+        images: [
+            {
+                url: siteConfig.ogImage,
+                width: 1200,
+                height: 630,
+                alt: siteConfig.name,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: siteConfig.name,
+        description: siteConfig.description,
+        images: [siteConfig.ogImage],
     },
     robots: {
         index: true,
@@ -41,6 +57,22 @@ export const metadata: Metadata = {
         },
     },
 };
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteConfig.shortName,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
+    areaServed: "PL",
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Szamotuły",
+        addressCountry: "PL",
+    },
+    sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
+};
 
 export default function RootLayout({
                                        children,
@@ -50,6 +82,10 @@ export default function RootLayout({
     return (
         <html lang="pl" className="scroll-smooth scroll-pt-24" suppressHydrationWarning={true}>
         <body className={`${inter.className} bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 antialiased transition-colors duration-300`}>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true} disableTransitionOnChange={false}>
             <Navbar />
             <div className="pt-20">
@@ -58,6 +94,8 @@ export default function RootLayout({
             <Footer />
             <ScrollToTop />
             <CookieBanner/>
+            <Analytics />
+            <SpeedInsights />
         </ThemeProvider>
         </body>
         </html>

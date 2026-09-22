@@ -48,7 +48,7 @@ export async function sendEmailAction(formData: FormData) {
     const { name, email, subject, message, projectType } = parsed.data;
 
     try {
-        await resend.emails.send({
+        const { error: sendError } = await resend.emails.send({
             from: "Formularz Automatyzuj.it <onboarding@resend.dev>",
             to: "automatyzuj.it@gmail.com",
             replyTo: email,
@@ -56,9 +56,12 @@ export async function sendEmailAction(formData: FormData) {
             text: `Wiadomość z portfolio:\n\nImię: ${name}\nE-mail: ${email}\nTyp projektu: ${projectType}\nTemat: ${subject}\n\nWiadomość:\n${message || 'Brak wiadomości dodatkowej.'}`,
         });
 
+        if (sendError) {
+            return { error: "Nie udało się wysłać wiadomości. Spróbuj użyć adresu e-mail lub zadzwonić." };
+        }
+
         return { success: true };
-    } catch (error) {
-        console.error("Błąd wysyłki e-mail:", error);
+    } catch {
         return { error: "Wystąpił błąd serwera. Spróbuj użyć adresu e-mail lub zadzwonić." };
     }
 }

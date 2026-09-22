@@ -149,11 +149,8 @@ export default function Contact() {
 
                                 <div>
                                     <label htmlFor="contact-type" className="label-base">Rodzaj projektu</label>
-                                    <select
-                                        id="contact-type"
-                                        name="projectType"
-                                        required
-                                        className="input-base appearance-none cursor-pointer"
+                                    <select id="contact-type" name="projectType" required
+                                        className="input-base cursor-pointer"
                                         defaultValue=""
                                     >
                                         <option value="" disabled className="text-slate-400">Wybierz...</option>

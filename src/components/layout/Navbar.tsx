@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { navLinks } from "@/content/navbar";
 import Logo from "@/components/ui/Logo";
+import { siteConfig } from "@/config/site";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const telHref = `tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`;
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -29,6 +31,13 @@ export default function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
+                        <a
+                            href={telHref}
+                            className="hidden lg:inline-flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                        >
+                            <Phone className="w-4 h-4" />
+                            {siteConfig.contact.phone}
+                        </a>
 
                         <ThemeToggle />
 
@@ -74,6 +83,13 @@ export default function Navbar() {
                         >
                             Darmowa wycena
                         </Link>
+                        <a
+                            href={telHref}
+                            className="flex items-center justify-center gap-2 w-full text-center mt-3 px-5 py-4 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold rounded-sm"
+                        >
+                            <Phone className="w-4 h-4" />
+                            {siteConfig.contact.phone}
+                        </a>
                     </div>
                 </div>
             )}

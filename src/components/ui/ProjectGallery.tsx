@@ -44,7 +44,6 @@ export default function ProjectGallery({ desktopGallery, mobileGallery = [], tit
                                     alt={`Desktop Screen ${title} - ${idx + 1}`}
                                     className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                                     fill
-                                    priority={idx === 0}
                                     quality={90}
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
