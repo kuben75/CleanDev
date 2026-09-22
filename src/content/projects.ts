@@ -134,7 +134,8 @@ export const projects: IProject[] = [
         techStack: [".NET 8", "React", "PostgreSQL", "Docker", "SignalR", "GitHub Actions"],
         imagePath: "/img/medisure/1.png",
         reversed: false,
-        status: "Środowisko testowe",
+        status: "Live",
+        liveUrl: "https://medisure-platform.vercel.app",
         statusMessage: "Rozbudowany projekt inżynierski przetestowany w zamkniętym środowisku. Gotowy do podpięcia pod prawdziwych operatorów płatności i usług medycznych.",
         story: {
             problem: "Wybór odpowiedniego ubezpieczenia zdrowotnego często wymaga analizy wielu skomplikowanych ofert i wymiany maili z doradcą. Zależało mi na zbudowaniu jednego, czytelnego procesu obsługi.",
